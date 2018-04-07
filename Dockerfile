@@ -1,5 +1,5 @@
 FROM ruby:2.5
-MAINTAINER Hidenori Miyoshi miyohide@gmail.com
+LABEL maintainer "Hidenori Miyoshi <miyohide@gmail.com>"
 
 ## I wrote this file with reference to https://github.com/yokawasa/ci-demo-rails-app/blob/master/Dockerfile
 ## and https://www.slideshare.net/yokawasa/web-app-for-containers-mysqlrails-80754390

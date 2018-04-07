@@ -12,14 +12,14 @@ RUN apt-get update -qq \
 WORKDIR /myapp
 
 ## Setup all the configfiles
-COPY railsapp/bin/init_container.sh /bin/init_container.sh
+COPY rails_app/bin/init_container.sh /bin/init_container.sh
 RUN chmod 777 /bin/init_container.sh \
     && echo "root:Docker!" | chpasswd \
     && rm -f /etc/nginx/conf.d/*
 
-COPY railsapp/config/nginx.conf /etc/nginx/conf.d/myapp.conf
-COPY railsapp/config/sshd_config /etc/ssh/sshd_config
-COPY railsapp /myapp
+COPY rails_app/config/nginx.conf /etc/nginx/conf.d/myapp.conf
+COPY rails_app/config/sshd_config /etc/ssh/sshd_config
+COPY rails_app /myapp
 
 ## Install for Rails app
 RUN gem install bundler --pre \
